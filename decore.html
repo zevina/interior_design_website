@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="icon" href="img/Logo_ico.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interno - Blog</title>
+    <title>Interno - Decore</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,89 +40,88 @@
 
         <section class="top-info">
             <div class="top-info__bg top-info__bg_blog">
-                <div class="top-info__content">
-                    <h2 class="top-info__title">Articles & News</h2>
-                    <nav class="breadcrumbs">
-                        <ul class="breadcrumbs__ul">
-                            <li class="breadcrumbs__li">
-                                <a href="index.html" class="breadcrumbs__link">Home</a>
-                            </li>
-                            <li class="breadcrumbs__li">
-                                <a href="blog.html" class="breadcrumbs__link">Blog</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
             </div>
         </section>
-        <section class="post center">
-            <h2 class="post__heading">Latest Post</h2>
-            <div class="post__article">
-                <div class="post__content">
-                    <div class="post__left">
-                        <img class="post__img" src="img/last-article.png" alt="Beautiful kitchen interior">
+
+        <section class="article center">
+            <div class="article__left">
+                <div v-for="post in filteredPosts" :key="post.id" class="article__content">
+                    <h2 class="article__title">{{ post.title }}</h2>
+                    <img :src="post.imgSrc" alt="Beautiful kitchen interior" class="article__img">
+                    <div class="article__date-breadcrumbs">
+                        <p class="article__date">{{ post.date }}</p>
+                        <nav class="breadcrumbs">
+                            <ul class="breadcrumbs__ul">
+                                <li class="breadcrumbs__li">
+                                    <a href="#" class="breadcrumbs__link">Interior</a>
+                                </li>
+                                <li class="breadcrumbs__li">
+                                    <a href="index.html" class="breadcrumbs__link">Home</a>
+                                </li>
+                                <li class="breadcrumbs__li">
+                                    <a href="decore.html" class="breadcrumbs__link">Decore</a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
-                    <div class="post__right">
-                        <div class="post__text-content">
-                            <p class="post__title">{{ articles[0].title }}</p>
-                            <p class="post__text">Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis
-                                dignissim maximus.posuere in.Contrary to popular belief.</p>
-                            <p class="post__text">Lorem Ipsum is not simply random text. It has roots in a piece of
-                                classica.</p>
-                        </div>
-                        <div class="post__date-btn">
-                            <p class="post__date">{{ articles[0].date }}</p>
-                            <div class="post__btn">
-                                <svg width="52" height="53" viewBox="0 0 52 53" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <circle class="circle-path" cx="26" cy="26.267" r="26" fill="#F4F0EC"/>
-                                    <path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36"
-                                          stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                        </div>
+                    <p class="article__text">Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae
+                        turpmaximus.posuere
+                        in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available,
+                        but
+                        the majority have suffered alteration in some form, by injecthumour, or randomised words which
+                        don't
+                        look even slightly believable.
+                        <br> <br>
+                        Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend
+                        to
+                        repeat predefined chunks as necessary.</p>
+                    <div class="article__quote">
+                        <p class="article__quotes">
+                            <svg width="74" height="56" viewBox="0 0 74 56" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M58.2516 0.600003C62.6516 0.600003 66.2516 2.06667 69.0516 5C71.7182 7.93334 73.0516 11.8667 73.0516 16.8C73.0516 25.4667 70.1849 33 64.4516 39.4C58.5849 45.8 51.5849 51.0667 43.4516 55.2L41.4516 51.8C44.7849 49.6667 47.9182 46.9333 50.8516 43.6C53.6516 40.2667 55.8516 36.6667 57.4516 32.8L51.8516 28.6C49.5849 27.1333 47.7182 25.1333 46.2516 22.6C44.7849 20.2 44.0516 17.8667 44.0516 15.6C44.0516 11.3333 45.3849 7.73334 48.0516 4.8C50.5849 2 53.9849 0.600002 58.2516 0.600003ZM17.0516 0.599999C21.4516 0.6 25.0516 2.06667 27.8516 5C30.5182 7.93333 31.8516 11.8667 31.8516 16.8C31.8516 25.4667 28.9849 33 23.2516 39.4C17.3849 45.8 10.3849 51.0667 2.25155 55.2L0.251554 51.8C3.58489 49.6667 6.71822 46.9333 9.65155 43.6C12.4516 40.2667 14.6516 36.6667 16.2516 32.8L10.6516 28.6C8.38489 27.1333 6.51822 25.1333 5.05155 22.6C3.58489 20.2 2.85156 17.8667 2.85156 15.6C2.85156 11.3333 4.18489 7.73333 6.85156 4.8C9.38489 2 12.7849 0.599999 17.0516 0.599999Z"
+                                      fill="#CDA274"/>
+                            </svg>
+                        </p>
+                        <p class="article__quote-text">The details are not the details. They make the design.</p>
                     </div>
+                    <h3 class="article__heading">Design sprints are great</h3>
+                    <p class="article__text">Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae
+                        turpmaximus.posuere
+                        in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available,
+                        but
+                        the majority have suffered.</p>
+                    <ol class="article__list">
+                        <li class="article__list-item">Contrary to popular belief.There are many variations of passages
+                            of
+                            Lorem Ipsum available, but the majority have suffered.
+                        </li>
+                        <li class="article__list-item">Contrary to popular belief.There are many variations of passages
+                            of
+                            Lorem Ipsum available, but the majority have suffered.
+                        </li>
+                        <li class="article__list-item">Contrary to popular belief.There are many variations of passages
+                            of
+                            Lorem Ipsum available, but the majority have suffered.
+                        </li>
+                    </ol>
+                    <img src="img/article-img2.png" alt="Beautiful kitchen interior" class="article__img">
+                    <p class="article__text">Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae
+                        turpmaximus.posuere
+                        in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available,
+                        but
+                        the majority have suffered.</p>
+                    <hr>
                 </div>
             </div>
-        </section>
-        <section class="articles center">
-            <div class="articles__heading articles__heading_blog">
-                <h2 class="articles__title articles__title_blog">Articles & News</h2>
-            </div>
-            <div class="articles__cards">
-                <div v-for="article in articles" :key="article.id" class="article-card">
-                    <a href="decore.html" class="article-card__link">
-                        <div class="article-card__top">
-                            <img :src="article.imgSrc" :alt="article.tag" class="article-card__img">
-                            <p class="article-card__title">{{ article.title }}</p>
-                        </div>
-                        <div class="article-card__content">
-                            <p class="article-card__date">{{ article.date }}</p>
-                            <div class="article-card__btn">
-                                <svg width="52" height="53" viewBox="0 0 52 53" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <circle class="circle-path" cx="26" cy="26.267" r="26" fill="#F4F0EC"/>
-                                    <path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36"
-                                          stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="overlay-tag">
-                        <p class="overlay-tag__text">{{ article.tag }}</p>
-                    </div>
+            <div class="article__tags">
+                <h3 class="article__tags-heading">Tags</h3>
+                <div v-model="tagSelected" class="tag-list__item" v-for="item in tags" :key="item.id">
+                    <label class="tag-list__btn">
+                        <input class="tag-list__input" @click="selectTag($event)" type="radio" name="tag" id="tag-{{ item.id }}" :value="item.tag">
+                        {{ item.tag }}
+                    </label>
                 </div>
-            </div>
-            <div class="pagination">
-                <button class="pagination__btn">01</button>
-                <button class="pagination__btn">02</button>
-                <button class="pagination__btn">03</button>
-                <button class="pagination__btn">
-                    <svg width="11" height="16" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1.16406 19L9.16406 10L1.16406 1" stroke="#292F36" stroke-width="2"
-                              stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
             </div>
         </section>
 

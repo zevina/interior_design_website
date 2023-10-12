@@ -116,9 +116,9 @@
             </div>
             <div class="article__tags">
                 <h3 class="article__tags-heading">Tags</h3>
-                <div v-model="tagSelected" class="tag-list__item" v-for="item in tags" :key="item.id">
+                <div class="tag-list__item" v-for="item in tags" :key="item.id">
                     <label class="tag-list__btn">
-                        <input class="tag-list__input" @click="selectTag($event)" type="radio" name="tag" id="tag-{{ item.id }}" :value="item.tag">
+                        <input  v-model="tagSelected" class="tag-list__input" @click="selectTag($event)" type="radio" name="tag" id="tag-{{ item.id }}" :value="item.tag">
                         {{ item.tag }}
                     </label>
                 </div>
